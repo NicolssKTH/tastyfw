@@ -31,10 +31,8 @@
 <div class="comments">
     <?php echo validation_errors(); ?>
     <?php echo form_open('comments/create'); ?>
-    <label>Name:</label>
-    <input type="text" name="name">
-    <label>comment:</label>
-    <textarea name="body"></textarea>
+    <?php echo 'Commenting as: '.$this->session->userdata('username'); ?>
+    <textarea class="commentingbox" name="body"></textarea>
     <input type="hidden" name="food" value="meatballs";>
     <button type="submit">Comment</button>
     <?php echo form_close(); ?>

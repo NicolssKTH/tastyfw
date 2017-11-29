@@ -3,7 +3,7 @@ class users extends CI_Controller{
     public function register(){
         $data['title'] = 'sign up';
 
-        $this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|is_unique[user.username]', array('is_unique' => 'That username does already exist!'));
+        $this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|is_unique[user.username]|alpha_numeric', array('is_unique' => 'That username does already exist!'));
         $this->form_validation->set_rules('psw', 'Password', 'required');
         $this->form_validation->set_rules('psw2', 'Repeat Password', 'matches[psw]');
 

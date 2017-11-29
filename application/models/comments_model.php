@@ -5,6 +5,7 @@ class comments_model extends CI_Model{
     }
     public function get_comments($slug = FALSE){
         if($slug === FALSE){
+            $this->db->order_by('id', 'DESC');
             $query = $this->db->get('comments');
             return $query->result_array();
         }
@@ -14,11 +15,12 @@ class comments_model extends CI_Model{
     }
 
     public function create_comment($food){
-        //$slug = url_title($this->input->post())
+
+        $comment = htmlspecialchars($this->input->post('body'));
 
         $data = array(
-        'username' => $this->input->post('name'),
-        'comment' => $this->input->post('body'),
+        'username' => $this->session->userdata('username'),
+        'comment' => $comment,
         'food' => $food
         );
         return $this->db->insert('comments', $data);

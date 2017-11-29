@@ -64,3 +64,7 @@
             <?php echo '<p class="alert-success">'.$this->session->flashdata('user_loggedout').'</p>'; ?>
             <?php endif; ?>
 
+            <?php if($this->session->flashdata('comment_posted')): ?>
+            <?php echo '<p class="alert-success">'.$this->session->flashdata('comment_posted').'</p>'; ?>
+            <?php endif; ?>
+

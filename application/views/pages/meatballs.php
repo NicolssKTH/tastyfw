@@ -29,6 +29,7 @@
     </ol>
 </div>
 <div class="comments">
+<?php if($this->session->userdata('logged_in')) : ?>
     <?php echo validation_errors(); ?>
     <?php echo form_open('comments/create'); ?>
     <?php echo 'Commenting as: '.$this->session->userdata('username'); ?>
@@ -36,6 +37,7 @@
     <input type="hidden" name="food" value="meatballs";>
     <button type="submit">Comment</button>
     <?php echo form_close(); ?>
+     <?php endif; ?>
     <h2>Comments</h2>
     <?php foreach($comments as $comment):
     if($comment['food'] == 'meatballs'){?>

@@ -11,8 +11,10 @@ class comments extends CI_Controller{
         $this->load->view('pages/'.$food);
         $this->load->view('templates/footer');
         }else{ */
-            $this->comments_model->create_comment($food);
-            redirect($food);
+        $this->comments_model->create_comment($food);
+        $this->session->set_flashdata('comment_posted', 'Your comment has been posted!');
+
+        redirect($food);
         //}
 
     }

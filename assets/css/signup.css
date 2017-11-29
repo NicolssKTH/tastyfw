@@ -38,14 +38,21 @@ input[type=text], input[type=password] {
 
 .alert-success {
     border: solid 2px;
-    border-color: lightgreen;
+    border-color: black;
     margin: 5px;
+    background: lightgreen;
+    border-radius: 3px 3px 3px 3px;
+    text-align: center;
 }
 
 .alert-fail {
     border: solid 2px;
-    border-color: red;
+    border-color: black;
     margin: 5px;
+    background: red;
+    border-radius: 3px 3px 3px 3px;
+    text-align: center;
+
 }
 
 .signupcontainer {
@@ -63,6 +70,6 @@ input[type=text], input[type=password] {
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
     .cancelbtn2, .signupbtn {
-       width: 100%;
+        width: 100%;
     }
 }

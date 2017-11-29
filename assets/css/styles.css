@@ -123,14 +123,14 @@ a:visited {
     padding-bottom: 3%;
 }
 
-.comment a:link{
+.comment commentbutton{
     color: black;
     margin-left: 70%;
     border: solid 1px;
 }
 
-.comment h3 {
-    margin-top: 1%;
+.commentusername {
+    padding-top: 15px;
     margin-left: 1em;
 }
 
@@ -152,7 +152,16 @@ a:visited {
     height: 100px;
     resize: none;
 }
-.comments button{
+.deletebutton{
+    width: auto;
+    margin-top: 5px;
+    border-radius: 7px 0px 0px 7px;
+    padding: 10px;
+    background: red;
+    border: solid 1px black;
+}
+
+.commentbutton{
     margin-bottom: 30px;
     border: solid 1px;
     border-color: black;

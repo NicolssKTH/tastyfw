@@ -29,6 +29,15 @@
     </ol>
 </div>
 <div class="comments">
+    <?php echo validation_errors(); ?>
+    <?php echo form_open('comments/create'); ?>
+    <label>Name:</label>
+    <input type="text" name="name">
+    <label>comment:</label>
+    <textarea name="body"></textarea>
+    <input type="hidden" name="food" value="meatballs";>
+    <button type="submit">Comment</button>
+    <?php echo form_close(); ?>
     <h2>Comments</h2>
     <?php foreach($comments as $comment):
     if($comment['food'] == 'meatballs'){?>

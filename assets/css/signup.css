@@ -42,6 +42,12 @@ input[type=text], input[type=password] {
     margin: 5px;
 }
 
+.alert-fail {
+    border: solid 2px;
+    border-color: red;
+    margin: 5px;
+}
+
 .signupcontainer {
     margin: 3%;
 

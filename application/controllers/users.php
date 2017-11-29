@@ -29,7 +29,7 @@ class users extends CI_Controller{
 
         if($this->form_validation->run() === FALSE){
             $this->load->view('templates/header');
-            $this->load->view('users/register', $data);
+            $this->load->view('users/login', $data);
             $this->load->view('templates/footer');
         }else{
             $username = $this->input->post('username');
@@ -53,5 +53,15 @@ class users extends CI_Controller{
                 redirect('home');
             }
         }
+    }
+    public function logout(){
+
+        $this->session->unset_userdata('logged_in');
+        $this->session->unset_userdata('user_id');
+        $this->session->unset_userdata('username');
+
+        $this->session->set_flashdata('user_loggedout', 'You are now logged out');
+
+        redirect('home');
     }
 }

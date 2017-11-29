@@ -12,4 +12,15 @@ class comments_model extends CI_Model{
         $query = $this->db->get_where('comments', array('slug' => $slug));
         return $query->row_array();
     }
+
+    public function create_comment($food){
+        //$slug = url_title($this->input->post())
+
+        $data = array(
+        'username' => $this->input->post('name'),
+        'comment' => $this->input->post('body'),
+        'food' => $food
+        );
+        return $this->db->insert('comments', $data);
+    }
 }

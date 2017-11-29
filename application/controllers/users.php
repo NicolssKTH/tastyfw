@@ -3,7 +3,7 @@ class users extends CI_Controller{
     public function register(){
         $data['title'] = 'sign up';
 
-        $this->form_validation->set_rules('username', 'Username', 'required|callback_check_username_exists');
+        $this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|is_unique[user.username]', array('is_unique' => 'That username does already exist!'));
         $this->form_validation->set_rules('psw', 'Password', 'required');
         $this->form_validation->set_rules('psw2', 'Repeat Password', 'matches[psw]');
 
@@ -53,16 +53,5 @@ class users extends CI_Controller{
                 redirect('home');
             }
         }
-    }
-    public function check_username_exists($username){
-
-        $this->form_validation->set_message('check_username_exists', 'That username does already exist!');
-
-        if($this->user_model->check_username_exists($username)){
-            return true;
-        }else{
-            return false;
-        }
-
     }
 }

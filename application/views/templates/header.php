@@ -46,10 +46,6 @@
             <?php echo '<p class="alert-success">'.$this->session->flashdata('user_registered').'</p>'; ?>
             <?php endif; ?>
 
-            <?php if($this->session->flashdata('check_username_exists')): ?>
-            <?php echo '<p class="alert-success">'.$this->session->flashdata('check_username_exists').'</p>'; ?>
-            <?php endif; ?>
-
             <?php if($this->session->flashdata('login_failed')): ?>
             <?php echo '<p class="alert-success">'.$this->session->flashdata('login_failed').'</p>'; ?>
             <?php endif; ?>

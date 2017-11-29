@@ -31,13 +31,4 @@ class user_model extends CI_Model{
         }
 
     }
-
-    public function check_username_exists($username){
-        $query = $this->db->get_where('user', array('username' => $username));
-        if(empty($query->row_array())){
-            return true;
-        }else{
-            return false;
-        }
-    }
 }

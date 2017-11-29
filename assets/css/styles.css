@@ -1,0 +1,244 @@
+body {
+    background-image: url("../images/hotdogs.jpg");
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url("../fonts/Dopestyle.ttf");
+}
+
+body h1 {
+    font-family: 'myFirstFont';
+    margin-left: 15%;
+    margin-top: 4%;
+    color: white;
+    font-size: 60px;
+    text-shadow:
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000;
+}
+#logoutbutton {
+    float: right;
+}
+
+
+a:link {
+    text-decoration: none;
+    color: white;
+}
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.McWrap {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: white;
+    border-radius: 7px 7px 7px 7px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    font-size: 20px;
+
+}
+
+.McWrap hr {
+    width: 85%;
+    margin-top: 300px;
+}
+
+.McWrap h2 {
+    margin-top: 2%;
+    margin-bottom: 1%;
+    font-size: 30px;
+    font-weight: 900;
+}
+.McWrap h3 {
+    margin-bottom: 1%;
+}
+.McWrap p {
+    padding-bottom: 1%;
+}
+
+
+.container {
+    margin: 5%;
+    padding-bottom: 5%;
+
+}
+
+
+.containerheadindex h2{
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.containerheadindex p{
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#indexpic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
+
+}
+
+.foodpic {
+    float: left;
+    padding-bottom: 5%;
+    width: 50%;
+    min-width: 200px;
+    height: auto;
+}
+
+.ingredienser {
+    float: left;
+    margin-left: 10%;
+    padding-bottom: 5%;
+
+}
+
+.instructions {
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 3%;
+
+}
+
+
+
+
+.comments {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 3%;
+}
+
+.comment a:link{
+    color: black;
+    margin-left: 70%;
+    border: solid 1px;
+}
+
+.comment h3 {
+    margin-top: 1%;
+    margin-left: 1em;
+}
+
+
+.comment {
+    border-radius: 7px 7px 7px 7px;
+    border: 1px solid;
+}
+
+.comment p {
+    margin-left: 5%;
+}
+.comment:nth-child(2n) {background: white}
+.comment:nth-child(2n+1) {background: #E3B584}
+
+.comments textarea {
+    width: 95%;
+    margin-bottom: 2%;
+}
+#submit {
+    float: right;
+    margin-right: 5%;
+    margin-bottom: 200px;
+}
+.commentsarea {
+    margin-top: 5%;
+}
+
+/* calendar */
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    height: 100px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+    vertical-align: top;
+
+}
+.calpic {
+    vertical-align: top;
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+    .weekdays li, .days li {width: 13.1%;}
+    .mcwrap {margin-left: 5%; margin-right: 5%;}
+}
+
+@media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.5%;}
+    .days li .active {padding: 2px;}
+    .topnav a {font-size: 10px}
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.2%;}
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    border-radius: 7px 7px 0 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a:active {
+    background-color: sandybrown;
+    color: white;
+}

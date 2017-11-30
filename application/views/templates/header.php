@@ -9,6 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     </head>
     <body>
+        <?php $this->session->set_userdata('last_page', current_url()); ?>
         <h1><a href="home">Tasty Recipes</a></h1>
         <div class="McWrap">
             <div class="topnav" id="myTopnav">

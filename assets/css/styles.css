@@ -155,10 +155,11 @@ a:visited {
 .deletebutton{
     width: auto;
     margin-top: 5px;
-    border-radius: 7px 0px 0px 7px;
+    border-radius: 7px 7px 7px 7px;
     padding: 10px;
     background: red;
     border: solid 1px black;
+    margin-right: 5px;
 }
 
 .commentbutton{

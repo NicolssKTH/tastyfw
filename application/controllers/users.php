@@ -26,6 +26,7 @@ class users extends CI_Controller{
 
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
+        $lastpage = $this->session->userdata('last_page');
 
         if($this->form_validation->run() === FALSE){
             $this->load->view('templates/header');
@@ -44,13 +45,12 @@ class users extends CI_Controller{
                     'logged_in' => true);
 
                 $this->session->set_userdata($userdata);
-                echo $user_id;
                 $this->session->set_flashdata('user_loggedin', 'You are now logged in');
-                redirect('home');
+                redirect($lastpage);
             }else{
 
                 $this->session->set_flashdata('login_failed', 'Login is invalid');
-                redirect('home');
+                redirect($lastpage);
             }
         }
     }
@@ -59,9 +59,10 @@ class users extends CI_Controller{
         $this->session->unset_userdata('logged_in');
         $this->session->unset_userdata('user_id');
         $this->session->unset_userdata('username');
+        $lastpage = $this->session->userdata('last_page');
 
         $this->session->set_flashdata('user_loggedout', 'You are now logged out');
 
-        redirect('home');
+        redirect($lastpage);
     }
 }

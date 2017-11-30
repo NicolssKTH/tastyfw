@@ -5,13 +5,13 @@
 
     <?php echo form_open('users/register'); ?>
         <div class="signupform">
-            <label><b>Username</b></label>
+            <h3>Username</h3>
             <input type="text" placeholder="Enter Username" name="username">
 
-            <label><b>Password</b></label>
+            <h3>Password</h3>
             <input type="password" placeholder="Enter Password" name="psw">
 
-            <label><b>Repeat Password</b></label>
+            <h3>Repeat Password</h3>
             <input type="password" placeholder="Repeat Password" name="psw2">
             <div class="clearfix">
                 <button type="button" class="cancelbtn2">Cancel</button>

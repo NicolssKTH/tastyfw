@@ -157,7 +157,7 @@ a:visited {
     margin-top: 5px;
     border-radius: 7px 7px 7px 7px;
     padding: 10px;
-    background: red;
+    background: #f44336;
     border: solid 1px black;
     margin-right: 5px;
 }
@@ -201,7 +201,8 @@ a:visited {
     list-style-type: none;
     display: inline-block;
     width: 13.6%;
-    height: 100px;
+    height: auto;
+    max-height: 100px;
     text-align: center;
     margin-bottom: 5px;
     font-size:12px;
@@ -211,6 +212,12 @@ a:visited {
 }
 .calpic {
     vertical-align: top;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
+
 }
 
 /* Add media queries for smaller screens */

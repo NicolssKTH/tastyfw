@@ -28,6 +28,7 @@ input[type=text], input[type=password] {
 .cancelbtn2,.signupbtn {
     float: left;
     width: 50%;
+    border: solid 1px black;
 
 }
 /* Add padding to container elements */

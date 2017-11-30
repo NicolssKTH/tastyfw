@@ -32,7 +32,7 @@
                             <label><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="password" required autofocus>
 
-                            <button type="submit">Login</button>
+                            <button type="submit" class="loginbutton">Login</button>
                         </div>
 
                         <div class="containerlogin" id="cancelbutton">

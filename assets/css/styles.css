@@ -201,8 +201,7 @@ a:visited {
     list-style-type: none;
     display: inline-block;
     width: 13.6%;
-    height: auto;
-    max-height: 100px;
+    height: 100px;
     text-align: center;
     margin-bottom: 5px;
     font-size:12px;
@@ -215,25 +214,35 @@ a:visited {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 80%;
     height: auto;
 
 }
 
 /* Add media queries for smaller screens */
 @media screen and (max-width:720px) {
-    .weekdays li, .days li {width: 13.1%;}
+    .weekdays li {width: 13.1%;}
+    .days li {width: 13.1%; height: 60px;}
     .mcwrap {margin-left: 5%; margin-right: 5%;}
+    #mytopnav a, #navlogin {
+        font-size: 15px;
+        padding: 14px 6px;
+    }
 }
 
 @media screen and (max-width: 420px) {
-    .weekdays li, .days li {width: 12.5%;}
+    .weekdays li {width: 12.5%;}
+    .days li {width: 12.5%; height: 40px;}
     .days li .active {padding: 2px;}
-    .topnav a {font-size: 10px}
+    #mytopnav a, #navlogin {
+        font-size: 11px;
+        padding: 14px 5px;
+    }
 }
 
-@media screen and (max-width: 290px) {
-    .weekdays li, .days li {width: 12.2%;}
+@media screen and (max-width: 320px) {
+    .weekdays li {width: 12.2%;}
+    .days li {width: 12.2%; height: 30px;}
 }
 
 /* Add a black background color to the top navigation */
@@ -250,7 +259,7 @@ a:visited {
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 14px;
     text-decoration: none;
     font-size: 17px;
 }

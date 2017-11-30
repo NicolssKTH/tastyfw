@@ -19,7 +19,7 @@
                 <a href="<?php echo base_url(); ?>calendar">Calendar</a>
                 <?php if(!$this->session->userdata('logged_in')) : ?>
                 <a href="<?php echo base_url(); ?>users/register" id="signupbutton">sign up</a>
-                <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+                <button id="navlogin" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
                 <div id="id01" class="modal">
 

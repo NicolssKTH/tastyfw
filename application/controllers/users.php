@@ -4,6 +4,7 @@ class users extends CI_Controller{
         $data['title'] = 'sign up';
 
         $this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|is_unique[user.username]|alpha_numeric', array('is_unique' => 'That username does already exist!'));
+
         $this->form_validation->set_rules('psw', 'Password', 'required');
         $this->form_validation->set_rules('psw2', 'Repeat Password', 'matches[psw]');
 
@@ -15,7 +16,6 @@ class users extends CI_Controller{
             $enc_password = password_hash($this->input->post('psw'), PASSWORD_DEFAULT);
 
             $this->user_model->register($enc_password);
-
             $this->session->set_flashdata('user_registered', 'You are now registered and can log in');
             redirect('home');
         }
@@ -59,10 +59,10 @@ class users extends CI_Controller{
         $this->session->unset_userdata('logged_in');
         $this->session->unset_userdata('user_id');
         $this->session->unset_userdata('username');
+
         $lastpage = $this->session->userdata('last_page');
 
         $this->session->set_flashdata('user_loggedout', 'You are now logged out');
-
         redirect($lastpage);
     }
 }

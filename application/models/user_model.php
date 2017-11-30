@@ -12,23 +12,17 @@ class user_model extends CI_Model{
 
     public function login($username, $password){
 
-        //$this->db->where('username', $username);
-        //$this->db->where('password', $password);
         $myquery = $this->db->query("SELECT * FROM user WHERE username = '$username'");
-        //$row = $myquery->row();
-        //$result = $this->db->get('user');
 
         if($myquery->num_rows() == 1){
             $pw = $myquery->row(0)->password;
             if(password_verify($password, $pw)){
-
-            return $myquery->row(0)->username;
+                return $myquery->row(0)->username;
             }else{
                 return false;
             }
         }else{
             return false;
         }
-
     }
 }

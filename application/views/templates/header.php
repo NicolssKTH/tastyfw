@@ -23,7 +23,7 @@
 
                 <div id="id01" class="modal">
 
-                    <form class="modal-content animate" action="users/login" method = "post">
+                    <form class="modal-content animate" action="<?php echo base_url(); ?>users/login" method = "post">
 
                         <div class="containerlogin">
                             <label><b>Username</b></label>

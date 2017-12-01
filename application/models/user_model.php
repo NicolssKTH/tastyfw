@@ -12,7 +12,8 @@ class user_model extends CI_Model{
 
     public function login($username, $password){
 
-        $myquery = $this->db->query("SELECT * FROM user WHERE username = '$username'");
+        $sql = "SELECT * FROM user WHERE username = ?";
+        $myquery = $this->db->query($sql, array($username));
 
         if($myquery->num_rows() == 1){
             $pw = $myquery->row(0)->password;

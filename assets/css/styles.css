@@ -216,6 +216,9 @@ a:visited {
     margin-right: auto;
     width: 80%;
     height: auto;
+    max-height: 63px;
+    max-width: 100px;
+
 
 }
 

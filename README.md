@@ -59,4 +59,3 @@ INSERT INTO `user` (`user_id`, `username`, `password`) VALUES
 (13, 'qwer', '$2y$10$1L7ijcNn2KXqF4Z.WWZveucsIaonMZjau6dSvmgH0klNCWbm4jXnm'),
 (11, 'svampbob', '$2y$10$G./.ZM5ekIGeguZ/tR.HT.kOEphDncTBsXRYRjYCn3stTA5hFv4KK'),
 (10, 'Niclas', '$2y$10$2ygspKw8O8kdFt0rh7Qvm.INRM5TL7ZwdWW39owe32F/dPbMKrXv2');
-COMMIT;

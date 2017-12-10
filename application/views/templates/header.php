@@ -5,6 +5,8 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/styles.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/login.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/signup.css">
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-3.2.1.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.bundle.min.js"></script>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     </head>
@@ -47,6 +49,7 @@
                 <?php endif; ?>
 
             </div>
+            <div class="alert-success" style="display: none"></div>
 
             <!-- flashmessage -->
             <?php if($this->session->flashdata('user_registered')): ?>

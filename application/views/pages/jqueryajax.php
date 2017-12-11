@@ -1,4 +1,4 @@
-<button id="showForm" style="margin-bottom: 5px;">add comment</button>
+<button id="showForm">add comment</button>
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -21,20 +21,6 @@
 <div id="test"></div>
 
 <script>
-    /*$('#postForm').submit(function(e){
-    e.preventDefault();
-    var name = $('#name').val();
-    var body = $('#body').val();
-    var food = $('food').val();
-    var url = $(this).attr('action');
-
-    $.post(url, {name:name, body:body, food:food}).done(function(data){
-        console.log('Comment saved');
-        console.log(data);
-    });
-
-})
-*/
 
     $(function(){
         showComments();

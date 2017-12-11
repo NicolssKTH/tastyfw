@@ -104,12 +104,19 @@
                 dataType: 'json',
                 success: function(data){
                     var output = '';
+                    var deletee = '';
                     var i;
                     for(i = 0; i<data.length;i++){
+                        if('<?php echo $this->session->userdata('username') ?>' == data[i].username){
+                            deletee = '<a href="javascript:;" class="deletebutton" data="'+data[i].id+'">Delete</a>'
+                        }else{
+                           deletee = '';
+                        }
                         if(data[i].food == 'pancake'){
-                            output += '<div class="comment"><a href="javascript:;" class="deletebutton" data="'+data[i].id+'">Delete</a>'+'<h3 class="commentusername">'+data[i].username+'</h3><p>'+data[i].comment+'</p></div>';
+                            output += '<div class="comment">'+deletee+'<h3 class="commentusername">'+data[i].username+'</h3><p>'+data[i].comment+'</p></div>';
                         }
                     }
+
                     $('#test').html(output);
                 },
                 error: function(){

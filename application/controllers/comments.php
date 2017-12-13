@@ -19,7 +19,6 @@ class comments extends CI_Controller{
         if($result){
             $msg['success'] = true;
         }
-        //file_put_contents("http://localhost/tastyfw/assets/changed.txt", 'test');
         echo json_encode($msg);
 
     }

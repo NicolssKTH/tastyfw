@@ -12,7 +12,7 @@ $(document).ready(function(){
         function longpolling() {
             $.getJSON("http://localhost/tastyfw/comments/longpolling",
                       function (response) {
-
+                console.log(response);
                 showComments();
                 longpolling();
             });
@@ -92,7 +92,6 @@ $(document).ready(function(){
                 var output = '';
                 var deleteComment = '';
                 var i;
-                console.log($('#foodcomment').val());
                 for(i = 0; i<data.length;i++){
                     if($('#username').text() == data[i].username){
                         deleteComment = '<a href="javascript:;" class="deletebutton" data="'+data[i].id+'">Delete</a>'

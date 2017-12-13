@@ -6,15 +6,16 @@ class comments_model extends CI_Model{
 
     public function longpolling(){
         while(true){
-            $msg = file_get_contents('http://localhost/tastyfw/assets/changed.txt');
-            if($msg != ""){
-                file_put_contents("http://localhost/tastyfw/assets/changed.txt", '');
-                json_encode($msg);
-                return;
+
+            $msg = file_get_contents(__DIR__."/changed.txt");
+
+            if($msg !== ""){
+                file_put_contents(__DIR__."/changed.txt", '');
+
+                return $msg;
             }
             session_write_close();
             sleep(1);
-            session_start();
         }
     }
 
@@ -30,7 +31,7 @@ class comments_model extends CI_Model{
 
     public function addComment(){
 
-
+file_put_contents(__DIR__."/changed.txt", 'Add');
         $comment = htmlspecialchars($this->input->post('body'));
         $data = array(
             'username' => $this->session->userdata('username'),
@@ -47,6 +48,8 @@ class comments_model extends CI_Model{
 
     }
     function delete_comment(){
+
+        file_put_contents(__DIR__."/changed.txt", 'Remove');
         $id = $this->input->get('id');
         $comment_query = $this->db->query("SELECT * FROM comments WHERE id = '$id'");
 

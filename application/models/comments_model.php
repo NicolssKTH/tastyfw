@@ -4,6 +4,20 @@ class comments_model extends CI_Model{
         $this->load->Database();
     }
 
+    public function longpolling(){
+        while(true){
+            $msg = file_get_contents('http://localhost/tastyfw/assets/changed.txt');
+            if($msg != ""){
+                file_put_contents("http://localhost/tastyfw/assets/changed.txt", '');
+                json_encode($msg);
+                return;
+            }
+            session_write_close();
+            sleep(1);
+            session_start();
+        }
+    }
+
     public function showComments(){
         $this->db->order_by('id', 'DESC');
         $query = $this->db->get('comments');
@@ -16,8 +30,8 @@ class comments_model extends CI_Model{
 
     public function addComment(){
 
-        $comment = htmlspecialchars($this->input->post('body'));
 
+        $comment = htmlspecialchars($this->input->post('body'));
         $data = array(
             'username' => $this->session->userdata('username'),
             'comment' => $comment,

@@ -29,6 +29,7 @@
 <div class="comments">
     <?php if($this->session->userdata('logged_in')) : ?>
     <button id="showForm">add comment</button>
+    <?php endif; ?>
     <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -37,7 +38,7 @@
                 </div>
                 <div class="modal-body">
                     <form id="myForm" action="<?php echo base_url() ?>comments/addComment" method="POST">
-                        <input type="hidden" name="food" value="pancake";>
+                        <input id="foodcomment" type="hidden" name="food" value="pancake";>
                         <textarea name="body"></textarea>
 
                     </form>
@@ -50,10 +51,9 @@
     </div>
 
 
-    <?php endif; ?>
     <h2>Comments:</h2>
 
-    <div id="test"></div>
+    <div id="commentsarea"></div>
 
 
 </div>

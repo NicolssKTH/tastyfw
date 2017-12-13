@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     showComments();
 
     $('#showForm').click(function(){
@@ -6,6 +7,19 @@ $(document).ready(function(){
         $('#myForm').attr('action', 'http://localhost/tastyfw/comments/addComment');
 
     })
+
+    $(document).ready(function () {
+        function longpolling() {
+            $.getJSON("http://localhost/tastyfw/comments/longpolling",
+                      function (response) {
+
+                showComments();
+                longpolling();
+            });
+        }
+        longpolling();
+    });
+
 
     $('#addcomment').click(function(){
         var url = $('#myForm').attr('action');
@@ -45,7 +59,7 @@ $(document).ready(function(){
     })
 
 
-    $('#test').on('click', '.deletebutton', function(){
+    $('#commentsarea').on('click', '.deletebutton', function(){
         var id = $(this).attr('data');
         $.ajax({
             type: 'ajax',
@@ -68,7 +82,6 @@ $(document).ready(function(){
         });
     });
 
-
     function showComments(){
         $.ajax({
             type: 'ajax',
@@ -79,18 +92,19 @@ $(document).ready(function(){
                 var output = '';
                 var deleteComment = '';
                 var i;
+                console.log($('#foodcomment').val());
                 for(i = 0; i<data.length;i++){
                     if($('#username').text() == data[i].username){
                         deleteComment = '<a href="javascript:;" class="deletebutton" data="'+data[i].id+'">Delete</a>'
                     }else{
                         deleteComment = '';
                     }
-                    if(data[i].food == 'pancake'){
+                    data[i].username;
+                    if(data[i].food == $('#foodcomment').val()){
                         output += '<div class="comment">'+deleteComment+'<h3 class="commentusername">'+data[i].username+'</h3><p>'+data[i].comment+'</p></div>';
                     }
                 }
-
-                $('#test').html(output);
+                $('#commentsarea').html(output);
             },
             error: function(){
                 alert('could not get data from database');

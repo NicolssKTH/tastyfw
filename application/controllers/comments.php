@@ -7,6 +7,11 @@ class comments extends CI_Controller{
         echo json_encode($result);
     }
 
+    public function longpolling(){
+        $result = $this->comments_model->longpolling();
+        echo json_encode($result);
+    }
+
     public function addComment(){
 
         $result = $this->comments_model->addComment();
@@ -14,23 +19,24 @@ class comments extends CI_Controller{
         if($result){
             $msg['success'] = true;
         }
+        //file_put_contents("http://localhost/tastyfw/assets/changed.txt", 'test');
         echo json_encode($msg);
 
     }
-    	public function delete(){
-		$result = $this->comments_model->delete_comment();
-		$msg['success'] = false;
-		if($result){
-			$msg['success'] = true;
-		}
-		echo json_encode($msg);
-	}
+    public function delete(){
+        $result = $this->comments_model->delete_comment();
+        $msg['success'] = false;
+        if($result){
+            $msg['success'] = true;
+        }
+        echo json_encode($msg);
+    }
 
 }
 
-    //***************** Without javascript ****************
+//***************** Without javascript ****************
 
-    /*public function create(){
+/*public function create(){
         $food = $this->input->post('food');
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('body', 'Comment', 'required');

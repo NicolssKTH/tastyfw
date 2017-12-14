@@ -8,8 +8,9 @@ class comments extends CI_Controller{
     }
 
     public function longpolling(){
-        $result = $this->comments_model->longpolling();
-        echo json_encode($result);
+        $rows = $this->input->post('numRows');
+        $result = $this->comments_model->longpolling($rows);
+        echo $result;
     }
 
     public function addComment(){

@@ -4,15 +4,16 @@ class comments_model extends CI_Model{
         $this->load->Database();
     }
 
-    public function longpolling(){
+    public function longpolling($rows){
         while(true){
 
-            $msg = file_get_contents(__DIR__."/changed.txt");
+            $query = $this->db->get('comments');
 
-            if($msg !== ""){
-                file_put_contents(__DIR__."/changed.txt", '');
+            if($rows != $query->num_rows()){
 
-                return $msg;
+                $rows = $query->num_rows();
+
+                return $rows;
             }
             session_write_close();
             sleep(1);
@@ -31,7 +32,6 @@ class comments_model extends CI_Model{
 
     public function addComment(){
 
-file_put_contents(__DIR__."/changed.txt", 'Add');
         $comment = htmlspecialchars($this->input->post('body'));
         $data = array(
             'username' => $this->session->userdata('username'),
@@ -49,7 +49,6 @@ file_put_contents(__DIR__."/changed.txt", 'Add');
     }
     function delete_comment(){
 
-        file_put_contents(__DIR__."/changed.txt", 'Remove');
         $id = $this->input->get('id');
         $comment_query = $this->db->query("SELECT * FROM comments WHERE id = '$id'");
 

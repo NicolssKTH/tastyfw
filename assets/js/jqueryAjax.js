@@ -1,6 +1,7 @@
 $(document).ready(function(){
-
+    var numRows = 0;
     showComments();
+    longpolling();
 
     $('#showForm').click(function(){
         $('#myModal').modal('show');
@@ -8,17 +9,20 @@ $(document).ready(function(){
 
     })
 
-    $(document).ready(function () {
-        function longpolling() {
-            $.getJSON("http://localhost/tastyfw/comments/longpolling",
-                      function (response) {
+    function longpolling() {
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost/tastyfw/comments/longpolling',
+            data:{ numRows: numRows},
+            dataType: 'json',
+            success:    function (response) {
                 console.log(response);
                 showComments();
                 longpolling();
-            });
-        }
-        longpolling();
-    });
+            }
+        });
+    }
+
 
 
     $('#addcomment').click(function(){
@@ -92,6 +96,7 @@ $(document).ready(function(){
                 var output = '';
                 var deleteComment = '';
                 var i;
+                numRows = data.length;
                 for(i = 0; i<data.length;i++){
                     if($('#username').text() == data[i].username){
                         deleteComment = '<a href="javascript:;" class="deletebutton" data="'+data[i].id+'">Delete</a>'

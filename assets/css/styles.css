@@ -242,6 +242,10 @@ a:visited {
         font-size: 15px;
         padding: 14px 6px;
     }
+        #McWrap{
+        width: 90%;
+        margin: 5%;
+    }
 }
 
 @media screen and (max-width: 420px) {
@@ -251,6 +255,10 @@ a:visited {
     #mytopnav a, #navlogin {
         font-size: 11px;
         padding: 14px 5px;
+    }
+    #McWrap{
+        width: 100%;
+        margin: 0px;
     }
 }
 

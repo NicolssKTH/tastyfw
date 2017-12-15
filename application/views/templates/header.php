@@ -13,7 +13,7 @@
     <body>
         <?php $this->session->set_userdata('last_page', current_url()); ?>
         <h1><a href="home">Tasty Recipes</a></h1>
-        <div class="McWrap">
+        <div class="McWrap" id="McWrap">
             <div class="topnav" id="myTopnav">
                 <a href="<?php echo base_url(); ?>home">Home</a>
                 <a href="<?php echo base_url(); ?>meatballs">Meatballs</a>
